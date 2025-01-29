@@ -1,0 +1,14 @@
+#!/bin/bash
+# xstartup - XFCE用のVNCスタートアップスクリプト
+unset SESSION_MANAGER
+unset DBUS_SESSION_BUS_ADDRESS
+
+# X関連の設定
+xrdb $HOME/.Xresources
+xsetroot -solid grey
+
+# DBusの起動
+/usr/bin/dbus-launch --exit-with-session &
+
+# XFCEセッションの起動
+startxfce4 &

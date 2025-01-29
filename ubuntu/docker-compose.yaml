@@ -1,0 +1,20 @@
+services:
+  ubuntu-desktop:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "6080:80"  # noVNC用のポート
+      - "5901:5901"  # VNC用のポート
+    volumes:
+      - ./data:/data
+    environment:
+      - VNC_RESOLUTION=1920x1020
+      - VNC_PASSWORD=password  # VNCパスワード（必要に応じて変更してください）
+    shm_size: '2gb'
+    privileged: true
+    restart: unless-stopped
+    cap_add:
+      - SYS_ADMIN
+    security_opt:
+      - seccomp:unconfined
