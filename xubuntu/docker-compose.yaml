@@ -1,9 +1,0 @@
-services:
-  xubuntu:
-    image: 'docker.io/hectorm/xubuntu:latest'
-    shm_size: '2gb'
-    ports:
-      - '3322:3322/tcp'
-      - '3389:3389/tcp'
-    devices:
-      - '/dev/dri:/dev/dri'
