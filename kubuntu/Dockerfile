@@ -2,8 +2,8 @@
 ### https://docs.linuxserver.io/images/docker-webtop/#version-tags
 
 FROM lscr.io/linuxserver/webtop:ubuntu-kde
-# FROM lscr.io/linuxserver/webtop:ubuntu-xfce
-# FROM lscr.io/linuxserver/webtop:latest
+# FROM lscr.io/linuxserver/webtop:ubuntu-xfce <-- XFCE Ubuntu
+# FROM lscr.io/linuxserver/webtop:latest # <-- XFCE Alpine
 
 # Install packages
 RUN apt-get update && apt-get upgrade -y \
