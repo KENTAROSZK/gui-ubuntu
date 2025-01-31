@@ -18,12 +18,17 @@ RUN apt-get update && apt-get upgrade -y \
      fonts-takao \
      libreoffice \
      libreoffice-l10n-ja \
+     ca-certificates \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
-# uvのインストール
-RUN curl -LsSf https://astral.sh/uv/install.sh | sh && \
-  export PATH="$HOME/.local/bin:$PATH" && \
-  uv self update
+#====================================================================
+# uvのインストールと移動
+RUN curl -LsSf https://astral.sh/uv/install.sh | sh \
+  && mv /config/.local/bin/uv /usr/local/bin/uv \
+  && mv /config/.local/bin/uvx /usr/local/bin/uvx \
+  && chmod +x /usr/local/bin/uv /usr/local/bin/uvx
 
-ENV PATH "$PATH:/config/.local/bin"
+# 環境変数 PATH を設定
+ENV PATH="/usr/local/bin:${PATH}"
+#====================================================================

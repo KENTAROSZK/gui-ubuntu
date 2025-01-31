@@ -11,7 +11,7 @@ services:
       - PGID=1000
       - TZ=Etc/UTC
       - SUBFOLDER=/ #optional
-      - TITLE=Webtop #optional
+      - TITLE=Ubuntu #optional
     volumes:
       - ./data:/config
       - /var/run/docker.sock:/var/run/docker.sock #optional
@@ -20,6 +20,6 @@ services:
       - 3001:3001
     devices:
       - /dev/dri:/dev/dri #optional
-    shm_size: "6gb" #メモリ共有設定
+    shm_size: "2gb" #メモリ共有設定
     restart: unless-stopped
     tty: true               # コンソールを使用可能にする
