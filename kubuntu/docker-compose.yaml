@@ -20,6 +20,6 @@ services:
       - 3001:3001
     devices:
       - /dev/dri:/dev/dri #optional
-    shm_size: "4gb" #メモリ共有設定
+    shm_size: "6gb" #メモリ共有設定
     restart: unless-stopped
     tty: true               # コンソールを使用可能にする
