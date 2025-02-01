@@ -30,5 +30,7 @@ RUN curl -LsSf https://astral.sh/uv/install.sh | sh \
   && chmod +x /usr/local/bin/uv /usr/local/bin/uvx
 
 # 環境変数 PATH を設定
-ENV PATH="/usr/local/bin:${PATH}"
+# ENV PATH="/usr/local/bin:${PATH}"
+# ENV PATH="/config/.local/bin:${PATH}"
+ENV PATH="/usr/local/bin:/config/.local/bin:${PATH}"
 #====================================================================
